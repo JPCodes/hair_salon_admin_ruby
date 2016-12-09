@@ -27,20 +27,11 @@ a, a:hover, a:focus {
 }
 
 
-#container {
-    width: 100%;
-    height: 100%;
-}
-
 #sidebar {
     width: 180px;
     height: 100%;
     position: fixed;
     background: #394a59;
-}
-
-.nav-collapse.collapse {
-    display: inline;
 }
 
 ul.sidebar-menu , ul.sidebar-menu li ul.sub{
@@ -49,7 +40,7 @@ ul.sidebar-menu , ul.sidebar-menu li ul.sub{
 }
 
 ul.sidebar-menu {
-    margin-top: 60px;
+    margin-top: 80px;
 }
 
 ul.sidebar-menu li a{
@@ -65,12 +56,7 @@ ul.sidebar-menu li a{
     border-bottom: 1px solid #D7D7D7;
 }
 
-ul.sidebar-menu li.active a, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:focus {
-    background: #2e3b46;
-    color: #fff;
-    display: block;
 
-}
 
 .header, .footer {
     min-height: 60px;
@@ -120,10 +106,34 @@ ul.top-menu > li > a {
     padding: 2px 6px;
     margin-right: 15px;
 }
-.navbar-form .form-control{
-    width: 200px;
-    height: 30px;
-    background: white url('../img/icons/search-line-icon.png') no-repeat 3px;
-    padding-left: 24px;
-    margin-top: 1px;
+
+.wrapper {
+    display: inline-block;
+    margin-top: 80px;
+    padding: 15px;
+    width: 100%;
+}
+#main-content {
+
+    margin-left: 280px;
+}
+
+.center-top{
+  margin-top: 100px;
+}
+
+#stylists {
+  background-image: url('https://static1.squarespace.com/static/55be5008e4b055590b378eb7/t/56099dfae4b09b29c3dbaf88/1443470844676/Skyler+Notvotny.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 200px;
+  min-width: 300px;
+}
+
+#clients{
+  background-image: url('https://img.grouponcdn.com/deal/c1zNXhYUmwPem9eQViL2/E1-1000x600/v1/c700x420.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 200px;
+  min-width: 300px;
 }
