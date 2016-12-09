@@ -38,5 +38,15 @@ class Client
     instance_variable_set("@#{name}",value)
     DB.exec("UPDATE clients SET #{name} = '#{value}' WHERE id = #{self.id};")
   end
+  define_singleton_method(:find_by) do |name, value|
+    clients = Client.all()
+    found = nil
+    clients.each() do |client|
+      if eval("client." + eval("name")).to_s == value.to_s
+        found = client
+      end
+    end
+    found
+  end
 
 end

@@ -17,10 +17,6 @@ get('/stylists') do
   erb(:stylists)
 end
 
-get('/clients') do
-  erb(:clients)
-end
-
 get('/stylist_new') do
   erb(:stylist_form)
 end
@@ -69,4 +65,35 @@ patch('/stylist/:id/edit') do
   bio != "" ? @stylist.update("bio", bio) : nil
   @stylists = Stylist.all()
   erb(:stylists)
+end
+
+# Clients
+
+get('/clients') do
+  @clients = Client.all()
+  erb(:clients)
+end
+
+get('/client_new') do
+  erb(:client_form)
+end
+
+post('/client_new') do
+  name = params.fetch('name')
+  next_appointment = params.fetch('next_appointment')
+  Client.new({:name => name, :next_appointment => next_appointment}).save()
+  @clients = Client.all()
+  erb(:clients)
+end
+
+get('/clients/:id') do
+  @client = Client.find_by("id",params.fetch('id').to_i)
+  erb(:client)
+end
+
+delete("/client/:id/delete") do
+  @client = Client.find_by("id",params.fetch("id").to_i)
+  @client.delete()
+  @clients = Client.all()
+  erb(:clients)
 end

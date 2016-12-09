@@ -1,1 +1,26 @@
-clients
+<a class="new btn btn-info" href="/client_new">Add a new Client here</a>
+<h1>Clients</h1>
+
+<% if @clients.any?() %>
+  <h3>Here are the existing Clients:</h3><br>
+  <div class="container">
+    <% @clients.each() do |client| %>
+    <div class="row">
+        <div class="col-xs-2">
+          &nbsp
+        </div>
+        <div class="col-xs-8">
+          <a href="/clients/<%= client.id()%>"> <%= client.name()%></a><br>
+          <small>Next appointment: <%= client.next_appointment %> </small><br>
+        </div>
+        <div class="col-xs-2">
+          &nbsp
+        </div>
+    </div>
+    <% end %>
+  </div>
+<% else %>
+
+    <p>There are no Clients yet!</p>
+
+<% end %>
