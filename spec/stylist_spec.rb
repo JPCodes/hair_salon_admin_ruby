@@ -58,4 +58,11 @@ describe(Stylist) do
       expect(test_stylist1.bio).to(eq("some other bio"))
     end
   end
+  describe('.find_by') do
+    it "will find a stylist based on an id" do
+      test_stylist1 = Stylist.new({:name => "stylist", :specialty => "long-hair", :title => "senior stylist", :image => "www.someurl.com", :bio => "biography text here"})
+      test_stylist1.save()
+      expect(Stylist.find_by("id",test_stylist1.id)).to(eq(test_stylist1))
+    end
+  end
 end

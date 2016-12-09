@@ -1,11 +1,11 @@
 class Stylist
-  attr_reader(:name, :specialty, :id, :title, :image, :bio)
+  attr_reader(:name, :specialty, :id, :title, :image, :bio,)
 
   define_method(:initialize) do |attributes|
     @name = attributes.fetch(:name, nil)
     @specialty = attributes.fetch(:specialty, nil)
     @title = attributes.fetch(:title, nil)
-    @image = attributes.fetch(:image, nil)
+    @image = attributes.fetch(:image, 'http://placehold.it/300x300')
     @bio = attributes.fetch(:bio, nil)
     @id = attributes.fetch(:id, nil)
   end
@@ -41,5 +41,16 @@ class Stylist
   define_method(:update) do |name, value|
     instance_variable_set("@#{name}",value)
     DB.exec("UPDATE stylists SET #{name} = '#{value}' WHERE id = #{self.id};")
+  end
+
+  define_singleton_method(:find_by) do |name, value|
+    all_stylists = Stylist.all()
+    found = nil
+    all_stylists.each() do |stylist|
+      if eval("stylist." + eval("name")).to_s == value.to_s
+        found = stylist
+      end
+    end
+    found
   end
 end
