@@ -1,0 +1,26 @@
+<a href="javascript:history.back()">Go back</a>
+<a class="new btn btn-info" href="/stylist_new">Add a new Stylist here</a>
+<h1> <%= @stylist.name.upcase! %> the stylist </h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-2">
+      &nbsp
+    </div>
+    <div class="col-xs-8">
+      <a href="/stylists/<%= @stylist.id()%>"> <%= @stylist.name()%></a><br>
+    <img src="<%= @stylist.image %>"><br>
+    <small>Title: <%= @stylist.title %>  -   Specialty: <%= @stylist.specialty %> </small><br>
+    <%= @stylist.bio %>
+    </div>
+    <div class="col-xs-2">
+      &nbsp
+    </div>
+  </div>
+  <form action="/delete/<%= @stylist.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button type="submit" name="button" class="btn btn-danger pull-right">Delete Stylist</button>
+  </form>
+
+  <a class="new btn btn-info" href="/stylist_edit/<%@stylist.id%>">Edit current Stylist</a>
+</div>

@@ -21,4 +21,11 @@ describe('Stylists', {:type => :feature}) do
     click_button('Add Stylist')
     expect(page).to have_content("Stylist1")
   end
+  it "will delete a sytlist" do
+    Stylist.new({:name => "stylist", :specialty => "long-hair", :title => "senior stylist", :image => "www.someurl.com", :bio => "biography text here"}).save()
+    visit('/stylists')
+    click_link('stylist')
+    click_button('Delete Stylist')
+    expect(page).not_to have_content("stylist")
+  end
 end
