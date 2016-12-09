@@ -1,12 +1,78 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Project</title>
-  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
-</head>
-<body>
-<div class="container">
-  <%= yield %>
-</div>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hair Salon admin</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap-theme.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  </head>
+
+  <body>
+  <section id="container" class="">
+      <header class="header dark-bg">
+            <div class="toggle-nav">
+                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"></div>
+            </div>
+            <a href="index.html" class="logo">HairSalon <span class="lite">Admin</span></a>
+            <div class="nav search-row" id="top_menu">
+                <ul class="nav top-menu">
+                    <li>
+                        <form class="navbar-form">
+                            <input class="form-control" placeholder="Search" type="text">
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            <div class="top-nav notification-row">
+                <ul class="nav pull-right top-menu">
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="username">Admin</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout">
+                            <div class="log-arrow-up"></div>
+                            <li>
+                                <a href="login.html"> Log Out</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+      </header>
+      <aside>
+          <div id="sidebar"  class="nav-collapse ">
+              <ul class="sidebar-menu">
+                  <li class="">
+                      <a class="" href="index.html">
+                          <span>Dashboard</span>
+                      </a>
+                  </li>
+                  <li>
+                      <a class="" href="widgets.html">
+                          <span>Stylists</span>
+                      </a>
+                  </li>
+                  <li>
+                      <a class="" href="chart-chartjs.html">
+                          <span>Clients</span>
+                      </a>
+                  </li>
+              </ul>
+          </div>
+      </aside>
+      <section id="main-content">
+          <section class="wrapper">
+            <%= yield %>
+
+
+
+          </section>
+      </section>
+  </section>
+    <script src="jquery-1.8.3.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+  </body>
 </html>

@@ -1,0 +1,129 @@
+
+@import url(http://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
+@import url(line-icons.css);
+
+body {
+    color: #797979;
+    background: #eeeeee;
+    font-family: 'Lato', sans-serif;
+    padding: 0px !important;
+    margin: 0px !important;
+    font-size:14px !important;
+}
+h1,h2,h3,h4,h5{
+    font-weight: 300;
+}
+label{
+    font-weight: 300;
+}
+ul li {
+    list-style: none;
+}
+
+a, a:hover, a:focus {
+    text-decoration: none;
+    outline: none;
+    outline: 0;
+}
+
+
+#container {
+    width: 100%;
+    height: 100%;
+}
+
+#sidebar {
+    width: 180px;
+    height: 100%;
+    position: fixed;
+    background: #394a59;
+}
+
+.nav-collapse.collapse {
+    display: inline;
+}
+
+ul.sidebar-menu , ul.sidebar-menu li ul.sub{
+    margin: -2px 0 0;
+    padding: 0;
+}
+
+ul.sidebar-menu {
+    margin-top: 60px;
+}
+
+ul.sidebar-menu li a{
+    color: #d0d8df;
+    text-decoration: none;
+    display: block;
+    padding: 15px 0 15px 10px;
+    font-size: 16px;
+    font-weight: 300;
+    outline: none;
+    transition: all 0.3s ease;
+    border-right: 1px solid #D7D7D7;
+    border-bottom: 1px solid #D7D7D7;
+}
+
+ul.sidebar-menu li.active a, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:focus {
+    background: #2e3b46;
+    color: #fff;
+    display: block;
+
+}
+
+.header, .footer {
+    min-height: 60px;
+    padding: 0 15px;
+}
+
+.header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1002;
+}
+
+.white-bg {
+    background: rgba(255,255,255,0.9);
+    border-bottom: 1px solid #f1f2f7;
+}
+.dark-bg {
+    background: rgba(54,66,74,1);
+    border-bottom: 1px solid #f1f2f7;
+}
+
+a.logo {
+    font-size: 22px;
+    font-weight: 300;
+    color: #fed189;
+    float: left;
+    margin-top: 15px;
+    text-transform: uppercase;
+}
+
+a.logo span {
+    color: #688a7e;
+}
+
+
+
+.search-row {
+    float: left;
+    margin-top: 15px;
+    margin-left: 16px;
+}
+
+ul.top-menu > li > a {
+    color: #fed189;
+    font-size: 18px;
+    padding: 2px 6px;
+    margin-right: 15px;
+}
+.navbar-form .form-control{
+    width: 200px;
+    height: 30px;
+    background: white url('../img/icons/search-line-icon.png') no-repeat 3px;
+    padding-left: 24px;
+    margin-top: 1px;
+}
