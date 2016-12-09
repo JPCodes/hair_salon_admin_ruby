@@ -48,5 +48,13 @@ describe(Client) do
       test_client1.update("next_appointment", "2016-12-12 14:00:00")
       expect(test_client1.next_appointment).to(eq("2016-12-12 14:00:00"))
     end
+    it "update the stylist for the client" do
+      test_client1 = Client.new({:name => "Diego", :next_appointment => "2016-12-12 14:00:00"})
+      test_client1.save()
+      test_stylist1 = Stylist.new({:name => "stylist", :specialty => "long-hair", :title => "senior stylist", :image => "www.someurl.com", :bio => "biography text here"})
+      test_stylist1.save()
+      test_client1.update("stylist_id",test_stylist1.id)
+      expect(test_client1.stylist_id).to(eq(test_stylist1.id))
+    end
   end
 end
