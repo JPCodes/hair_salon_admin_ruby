@@ -31,9 +31,27 @@ describe(Client) do
       test_client1 = Client.new({:name => "Diego", :next_appointment => "2016-12-12 14:00:00"})
       test_client2 = Client.new({:name => "Diego", :next_appointment => "2016-12-12 14:00:00"})
       expect(test_client1).to(eq(test_client2))
-
     end
   end
+  describe("#delete") do
+    it "deletes a client from database" do
+      test_client1 = Client.new({:name => "Diego", :next_appointment => "2016-12-12 14:00:00"})
+      test_client1.save()
+      test_client1.delete()
+      expect(Client.all()).to(eq([]))
+    end
+  end
+  describe('#update') do
+    it "lets you update attributes in the database" do
+      test_client1 = Client.new({:name => "Diego", :next_appointment => "2016-12-12 14:00:00"})
+      test_client1.save()
+      test_client1.update('name', "Kika")
+      expect(test_client1.name).to(eq('Kika'))
+      test_client1.update("next_appointment", "2016-12-12 14:00:00")
+      expect(test_client1.next_appointment).to(eq("2016-12-12 14:00:00"))
+    end
+  end
+
 
 
 end

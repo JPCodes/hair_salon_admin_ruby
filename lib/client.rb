@@ -30,4 +30,13 @@ class Client
     self.name.==(other_client.name).&(self.id.==(other_client.id)).&(self.next_appointment.==(other_client.next_appointment)).&(self.stylist_id.==(other_client.stylist_id))
   end
 
+  define_method(:delete) do
+    DB.exec("DELETE FROM clients WHERE id = #{self.id()};")
+  end
+
+  define_method(:update) do |name, value|
+    instance_variable_set("@#{name}",value)
+    DB.exec("UPDATE clients SET #{name} = '#{value}' WHERE id = #{self.id};")
+  end
+
 end
