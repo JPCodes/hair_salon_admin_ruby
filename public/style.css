@@ -16,9 +16,9 @@ h1,h2,h3,h4,h5{
 label{
     font-weight: 300;
 }
-ul li {
+/*ul li {
     list-style: none;
-}
+}*/
 
 a, a:hover, a:focus {
     text-decoration: none;
@@ -136,4 +136,8 @@ ul.top-menu > li > a {
   background-size: cover;
   min-height: 200px;
   min-width: 300px;
+}
+.new{
+  position: absolute;
+  margin-left: 40%;
 }

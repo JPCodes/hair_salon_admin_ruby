@@ -1,1 +1,17 @@
-stylists add <a href="/stylist_new">NEW</a>
+<a class="new btn btn-info" href="/stylist_new">Add a new Stylist here</a>
+<h1>Stylists</h1>
+
+<% if @stylists.any?() %>
+  <h3>Here are the existing Stylists:</h3>
+
+  <ul>
+    <% @stylists.each() do |stylist| %>
+      <li><a href="/Stylists/<%= stylist.id()%>"><%= stylist.name() %></a> </li>
+    <% end %>
+  </ul>
+
+<% else %>
+
+    <p>There are no Stylists yet!</p>
+
+<% end %>
