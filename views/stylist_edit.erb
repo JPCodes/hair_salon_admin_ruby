@@ -1,0 +1,28 @@
+<h3>Here you are able to edit <strong><%= @stylist.name %></strong>  information.</h3><a href="javascript:history.back()">Go back</a>
+
+
+<form action="/stylist/<%= @stylist.id %>/edit" method="post">
+   <input type="hidden" name="_method" value="patch">
+  <div class="form-group">
+    <label for="name">Name: - used to be <small> <%= @stylist.name %> </small></label>
+    <input type="text" name="name" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="specialty">Specialty: - used to be <small> <%= @stylist.specialty %> </small></label>
+    <input type="text" name="specialty" placeholder="long-hair" class="form-control">
+  </div>
+    <div class="form-group">
+      <label for="title">Title: - used to be <small> <%= @stylist.title %> </small></label>
+      <input type="text" name="title" placeholder="Junior Stylist" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="image">Image URL: - used to be <small> <%= @stylist.image %> </small></label>
+      <input type="text" name="image" placeholder=" www...com/image" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="bio">Biography:</label>
+      <textarea  name="bio" class="form-control" > </textarea>
+    </div>
+    <button type="submit" class="btn btn-info" name="button">Update info</button>
+  </div>
+</form>

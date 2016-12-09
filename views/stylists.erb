@@ -4,22 +4,22 @@
 <% if @stylists.any?() %>
   <h3>Here are the existing Stylists:</h3><br>
   <div class="container">
+    <% @stylists.each() do |stylist| %>
     <div class="row">
-      <% @stylists.each() do |stylist| %>
-      <div class="col-xs-2">
-        &nbsp
-      </div>
-      <div class="col-xs-8">
-        <a href="/stylists/<%= stylist.id()%>"> <%= stylist.name()%></a><br>
-      <img src="<%= stylist.image %>"><br>
-      <small>Title: <%= stylist.title %>  -   Specialty: <%= stylist.specialty %> </small><br>
-      <%= stylist.bio %>
-      </div>
-      <div class="col-xs-2">
-        &nbsp
-      </div>
-      <% end %>
+        <div class="col-xs-2">
+          &nbsp
+        </div>
+        <div class="col-xs-8">
+          <a href="/stylists/<%= stylist.id()%>"> <%= stylist.name()%></a><br>
+          <img src="<%= stylist.image %>"><br>
+          <small>Title: <%= stylist.title %>  -   Specialty: <%= stylist.specialty %> </small><br>
+          <%= stylist.bio %>
+        </div>
+        <div class="col-xs-2">
+          &nbsp
+        </div>
     </div>
+    <% end %>
   </div>
 <% else %>
 

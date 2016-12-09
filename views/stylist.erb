@@ -17,10 +17,10 @@
       &nbsp
     </div>
   </div>
-  <form action="/delete/<%= @stylist.id %>" method="post">
+  <form action="/stylist/<%= @stylist.id %>/delete" method="post">
     <input type="hidden" name="_method" value="delete">
     <button type="submit" name="button" class="btn btn-danger pull-right">Delete Stylist</button>
   </form>
 
-  <a class="new btn btn-info" href="/stylist_edit/<%@stylist.id%>">Edit current Stylist</a>
+  <a class="new btn btn-info" href="/stylist/<%=@stylist.id%>/edit">Edit current Stylist</a>
 </div>
