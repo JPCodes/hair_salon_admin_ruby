@@ -58,7 +58,6 @@ patch('/stylist/:id/edit') do
   bio = params.fetch('bio')
   @stylist = Stylist.find_by("id",id)
   name != "" ? @stylist.update("name", name) : nil
-  specialty != "" ? @stylist.update("specialty", specialty) : nil
   title != "" ? @stylist.update("title", title) : nil
   specialty != "" ? @stylist.update("specialty", specialty) : nil
   image != "" ? @stylist.update("image", image) : nil
@@ -94,6 +93,23 @@ end
 delete("/client/:id/delete") do
   @client = Client.find_by("id",params.fetch("id").to_i)
   @client.delete()
+  @clients = Client.all()
+  erb(:clients)
+end
+
+
+get('/client/:id/edit') do
+  @client = Client.find_by("id",params.fetch("id").to_i)
+  erb(:client_edit)
+end
+
+patch('/client/:id/edit') do
+  id = params.fetch('id').to_i
+  name = params.fetch('name')
+  next_appointment = params.fetch('next_appointment')
+  @client = Client.find_by("id",id)
+  name != "" ? @client.update("name", name) : nil
+  next_appointment != "" ? @client.update("next_appointment", next_appointment) : nil
   @clients = Client.all()
   erb(:clients)
 end

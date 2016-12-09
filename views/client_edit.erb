@@ -1,0 +1,16 @@
+<h3>Here you are able to edit <strong><%= @client.name %></strong>  information.</h3><a href="javascript:history.back()">Go back</a>
+
+
+<form action="/client/<%= @client.id %>/edit" method="post">
+   <input type="hidden" name="_method" value="patch">
+  <div class="form-group">
+    <label for="name">Name: - used to be <small> <%= @client.name %> </small></label>
+    <input type="text" name="name" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="next_appointment">Next Appointment: - used to be <small> <%= @client.next_appointment %> </small></label>
+    <input type="text" name="next_appointment" placeholder="long-hair" class="form-control">
+  </div>
+    <button type="submit" class="btn btn-info" name="button">Update info</button>
+  </div>
+</form>
