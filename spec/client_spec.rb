@@ -1,8 +1,6 @@
 require('spec_helper')
 
-
 describe(Client) do
-
   describe("#initialize") do
     it "will check initial parameters" do
       test_client = Client.new({:name => "Diego", :next_appointment => "2016-12-12 14:00:00"})
@@ -51,7 +49,4 @@ describe(Client) do
       expect(test_client1.next_appointment).to(eq("2016-12-12 14:00:00"))
     end
   end
-
-
-
 end
