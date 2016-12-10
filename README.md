@@ -43,7 +43,7 @@ localhost:4567
 
 ## Support and contact details
 
-_Contact Jonathan at: diego.spb@gmail.com
+_Contact me at: diego.spb@gmail.com
 
 ## Technologies Used
 
