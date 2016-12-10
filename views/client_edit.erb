@@ -9,8 +9,20 @@
   </div>
   <div class="form-group">
     <label for="next_appointment">Next Appointment: - used to be <small> <%= @client.next_appointment %> </small></label>
-    <input type="text" name="next_appointment" placeholder="long-hair" class="form-control">
+    <input type="text" name="next_appointment" placeholder="2016-12-12 14:00:00" class="form-control">
   </div>
+    <% if @stylists.any?()  %>
+        <div class="form-group">
+          <label for="stylist_id">Assign a new Stylist</label>
+          <select name='stylist_id' type='text' class="form-control">
+            <% @stylists.each() do |stylist| %>
+            <option value="<%= stylist.id()%>"> <%= stylist.name() %> </option>
+            <% end %>
+          </select>
+        </div>
+      <%else  %>
+      <h4>We currently have no stylists</h4>
+    <% end %>
     <button type="submit" class="btn btn-info" name="button">Update info</button>
   </div>
 </form>

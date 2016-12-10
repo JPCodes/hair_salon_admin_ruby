@@ -11,6 +11,11 @@
         </div>
         <div class="col-xs-8">
           <a href="/clients/<%= client.id()%>"> <%= client.name()%></a><br>
+          <% if client.stylist_id!=0 %>
+          Assigned to: <strong><%= Stylist.find_by("id", client.stylist_id).name.upcase %></strong>
+          <%else  %>
+            Not assigned to any stylist, <a href="/clients/<%= client.id()%>">click</a> to assign
+          <%end  %><br>
           <small>Next appointment: <%= client.next_appointment %> </small><br>
         </div>
         <div class="col-xs-2">

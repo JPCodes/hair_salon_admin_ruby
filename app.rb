@@ -87,6 +87,7 @@ end
 
 get('/clients/:id') do
   @client = Client.find_by("id",params.fetch('id').to_i)
+  @stylists = Stylist.all()
   erb(:client)
 end
 
@@ -100,6 +101,7 @@ end
 
 get('/client/:id/edit') do
   @client = Client.find_by("id",params.fetch("id").to_i)
+  @stylists = Stylist.all()
   erb(:client_edit)
 end
 
@@ -110,6 +112,14 @@ patch('/client/:id/edit') do
   @client = Client.find_by("id",id)
   name != "" ? @client.update("name", name) : nil
   next_appointment != "" ? @client.update("next_appointment", next_appointment) : nil
+  params.fetch('stylist_id') != "" ? @client.update("stylist_id",params.fetch('stylist_id')) : nil
+  @clients = Client.all()
+  erb(:clients)
+end
+
+patch('/client/:id/add_stylist') do
+  @client = Client.find_by("id",params.fetch('id').to_i)
+  @client.update("stylist_id", params.fetch('stylist_id'))
   @clients = Client.all()
   erb(:clients)
 end

@@ -19,7 +19,7 @@ class Stylist
     results = DB.exec("SELECT * FROM stylists;")
     stylists = []
     results.each() do |result|
-      id = result.fetch("id").to_i
+      id = result.fetch("id",nil).to_i
       name = result.fetch("name")
       specialty = result.fetch("specialty")
       title = result.fetch("title")
