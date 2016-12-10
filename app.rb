@@ -5,7 +5,7 @@ require('./lib/stylist')
 also_reload('lib/**/*.rb')
 require('pg')
 
-DB = PG.connect({:dbname => 'hair_salon_test'})
+DB = PG.connect({:dbname => 'hair_salon'})
 
 
 get('/') do
